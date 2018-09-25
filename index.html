@@ -1,0 +1,25 @@
+<html>
+<head>
+<script src="http://livejs.com/live.js"></script>
+<script src="celes.js"></script>
+</head>
+<body>
+  <canvas id="mycanvas" width=700 height=700></canvas>
+</body>
+<script>
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        init(document.getElementById("mycanvas",28.68,77.01));
+    }
+}
+function showPosition(pos){
+   console.log(pos);
+   init(document.getElementById("mycanvas"),
+pos.coords.latitude,
+pos.coords.longitude);
+}
+getLocation();
+</script>
+</html>
